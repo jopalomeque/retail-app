@@ -492,7 +492,8 @@ git push -u origin main
 | `git status` | Muestra qué cambió |
 | `git log` | Muestra el historial de commits |
 | `git branch` | Muestra todas las ramas |
-| `git checkout -b nombre` | Crea una rama nueva |
+| `git checkout -b nombre` | Crea una rama nueva (Deprecated) | 
+| `git switch -c nombre` | Crea una rama nueva |
 
 ---
 
