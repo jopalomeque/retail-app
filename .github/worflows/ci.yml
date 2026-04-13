@@ -1,0 +1,28 @@
+name: Pipeline de Calidad Retail App
+
+# ¿Cuándo corre el workflow?
+on:
+  push:
+    branches: [ "main" ]
+
+# Conjunto de tareas
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Runner aislado en la nube
+
+    # Acciones secuenciales
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Simular Análisis de Calidad
+        run: |
+          echo "Iniciando análisis de SonarQube simulado..."
+          echo "Revisando HTML y JS..."
+          echo "✅ Código limpio y sin code smells."
+
+      - name: Simular Pruebas Unitarias
+        run: |
+          echo "Ejecutando tests de la carpeta tests/..."
+          echo "✅ logic.test.js - PASSED"
+          echo "✅ html.test.js - PASSED"

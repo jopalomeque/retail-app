@@ -1,6 +1,6 @@
-.build
+.build/
 
-.env
+./.env
 
-.vscode
+.vscode/
 
