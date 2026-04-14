@@ -9,11 +9,21 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest  # Runner aislado en la 
+    env: 
+      DATABASE_ENGINE: ${{ vars.DATABASE_ENGINE }}  
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD}} 
 
     # Acciones secuenciales
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v6
+
+      - name: Ejecutar Comando SH
+        run: |
+          echo "Ejecutando comando SH simulado..."
+          echo "Conectando a la base de datos con ${DATABASE_ENGINE}..."
+          echo "Autenticación exitosa con contraseña oculta."
+          echo "${DATABASE_PASWORD}"
 
       - name: Simular Análisis de Calidad
         run: |
