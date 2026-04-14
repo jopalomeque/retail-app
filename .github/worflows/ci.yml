@@ -4,6 +4,11 @@ name: Pipeline de Calidad Retail App
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 # Conjunto de tareas
 jobs:
@@ -12,6 +17,7 @@ jobs:
     env: 
       DATABASE_ENGINE: ${{ vars.DATABASE_ENGINE }}  
       DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD}} 
+   
 
     # Acciones secuenciales
     steps:
@@ -36,3 +42,9 @@ jobs:
           echo "Ejecutando tests de la carpeta tests/..."
           echo "✅ logic.test.js - PASSED"
           echo "✅ html.test.js - PASSED"
+
+      - name: Probar Secret
+        run: |
+          echo "Probando acceso al secreto..."
+          echo "El secreto es: ${{ secrets.API_KEY_RETAIL }}"
+          echo "✅ Si ves *** arriba, el secreto está protegido."
