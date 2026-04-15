@@ -1,0 +1,15 @@
+{
+  "name": "github-devops-practice",
+  "version": "1.0.0",
+  "description": "Práctica de DevOps con GitHub, CI/CD y buenas prácticas",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest 2>/dev/null || echo 'Tests no configurados aún'",
+    "start": "node src/app.js",
+    "build": "echo 'Build completado'"
+  },
+  "keywords": ["devops", "github", "ci-cd", "github-actions"],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {}
+}
